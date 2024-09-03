@@ -6,7 +6,7 @@
 #SBATCH --array 1-2
 #SBATCH -w hops1,hops2
 #SBATCH --partition admin
-#SBATCH --account FY140198
+#SBATCH --account 
 
 #
 # Start Static Variables

@@ -5,7 +5,7 @@
 #SBATCH --ntasks-per-node 4 	# HPL requires 1 MPI rank for each gpu 
 #SBATCH --array 1-50
 #SBATCH --partition admin
-#SBATCH --account FY140198
+#SBATCH --account 
 
 # export NVSHMEM_BOOTSTRAP_PMI=PMIX
 # export HPL_USE_NVSHMEM=0
