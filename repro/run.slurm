@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-#SBATCH - N 1
+#SBATCH -N 1
 #SBATCH -p debug
 #SBATCH --ntasks-per-node 1
 #SBATCH --mail-user rscherbarth@unm.edu 
