@@ -1,4 +1,9 @@
 #!/bin/bash
+# @ryan 
+# Script to implement all the things from Matthew's 
+# Slides: https://fricke.co.uk/Teaching/CS491_591_HPC_2024_Fall/Lectures/Lecture_15-Warewulf.pdf
+# and a little bit from the slurm slides:
+# https://fricke.co.uk/Teaching/CS491_591_HPC_2024_Fall/Lectures/Lecture_16-Slurm_Installation_and_Config.pdf
 
 echo ============
 echo Slide 75

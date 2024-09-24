@@ -1,4 +1,7 @@
 #!/bin/bash 
+# @ryan 
+# Script to continuously update munge things as I'm debugging 
+# Munge sucks 
 
 echo check chrony:
 chronyc tracking | grep "Leap status"

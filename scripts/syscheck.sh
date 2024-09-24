@@ -1,4 +1,7 @@
 #!/bin/bash 
+# @ryan 
+# Script to start and verify all the dependencies
+# and networking before booting compute nodes
 
 echo ----------
 echo "Network"
