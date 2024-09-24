@@ -18,6 +18,15 @@ echo -=-=-=-=-=-=-=-=-
 #
 # ip route add default via 10.0.0.1 dev eno8403
 
+# Mounting filesystems 
+#
+# add to /etc/fstab
+#
+# nfs mounts provided in warewulf.conf
+# 10.0.0.1:/home /home nfs defaults 0 0
+# 10.0.0.1:/projects /projects nfs defaults 0 0
+#
+
 # change permissions
 chmod u+x /usr
 chmod g+x /usr
@@ -32,6 +41,7 @@ systemctl restart wwclient
 systemctl restart upower
 systemctl restart munge
 systemctl restart slurmd
+mount -a
 set +x
 
 echo "Done :)"
