@@ -19,9 +19,9 @@ set -x
 #
 # ip route add default via 10.0.0.1 dev eno8403
 
-mkdir /opt/spack 
+mkdir /opt
 chown root:systems /opt/spack
-mkdir /projects 
+mkdir /projects
 chown root:systems /projects
 
 # Mounting filesystems 
@@ -31,7 +31,11 @@ chown root:systems /projects
 # nfs mounts provided in warewulf.conf
 # 10.0.0.1:/home /home nfs defaults 0 0
 # 10.0.0.1:/projects /projects nfs defaults 0 0
-# 10.0.0.1:/opt/spack /opt/spack nfs defaults 0 0
+# 10.0.0.1:/opt /opt nfs defaults 0 0
+#
+# Otherwise 
+#
+# mount -t 10.0.0.1:/opt /opt nfs defaults 0 0
 #
 mount -a
 #
