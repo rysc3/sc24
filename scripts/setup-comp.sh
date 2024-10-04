@@ -49,6 +49,10 @@ chmod u+x /etc/slurm
 chmod g+x /etc/slurm
 chmod o+x /etc/slurm
 
+## @RYAN 
+# Installed a new docker on comp nodes
+# Might need to manually start on boot
+
 # turn things back on 
 systemctl restart dbus
 systemctl restart home.mount
