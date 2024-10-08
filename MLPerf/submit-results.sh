@@ -13,9 +13,10 @@
 #
 
 
-FORK_URL="https://github.com/rysc3/cm4mlperf-inference"
-
-
+# HTTPS submit 
+# FORK_URL="https://github.com/rysc3/cm4mlperf-inference"
+# SSH submit 
+FORK_URL="git@github.com:rysc3/cm4mlperf-inference.git"
 
 # cm run script --tags=push,github,mlperf,inference,submission \
 #    --repo_url=https://github.com/rysc3/cm4mlperf-inference \
@@ -56,3 +57,5 @@ echo "https://gateoverflow.github.io/cm4mlperf-inference"
 echo [][][][][]
 echo -=-=-=-=-=
 echo [][][][][]
+
+echo "If things broke, you probably need to do a rebase here: /home/ryan/CM/repos/local/cache/85ebe7ead4c64782/repo"
