@@ -61,4 +61,9 @@ systemctl restart slurmd
 mount -a
 set +x
 
+echo "!!!"
+echo "If you still cant ping things, you probably need to run this on the head node:"
+echo "iptables -t nat -A POSTROUTING -o eno8303 -j MASQUERADE"
+echo "!!!"
+
 echo "Done :)"
