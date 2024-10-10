@@ -55,10 +55,7 @@ chmod o+x /etc/slurm
 
 # turn things back on 
 systemctl restart dbus
-systemctl restart home.mount
-systemctl restart rtkit-daemon
 systemctl restart wwclient
-systemctl restart upower
 systemctl restart munge
 systemctl restart slurmd
 mount -a
