@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 # @ryan
 # Compute node image is stuck with incorrect permissions,
 # I'm not sure what is setting them but this is just easier
@@ -7,40 +7,40 @@
 # I want to transfer this to an ansible playbook at some point
 
 echo -=-=-=-=-=-=-=-=-
-echo set ip addr
+echo "Set IP Address"
 echo -=-=-=-=-=-=-=-=-
+
 set -x
 
+# Read input
+read -p "Enter 2 or 3 to set IP address: " INPUT
+
+# Check input and set the IP accordingly
+if [[ "$INPUT" == "2" ]]; then
+    ifconfig eno8403 10.0.0.2/16 netmask 255.255.0.0
+    ip route add default via 10.0.0.1 dev eno8403
+elif [[ "$INPUT" == "3" ]]; then
+    ifconfig eno8403 10.0.0.3/16 netmask 255.255.0.0
+    ip route add default via 10.0.0.1 dev eno8403
+else
+    echo "No network setup.."
+    exit 1
+fi
+
 # Update networking on computes
-# ifconfig eno8403 10.0.0.2/16 netmask 255.255.0.0
-#
-# The above command also adds this 
+# The above command also adds this
 # ip route add 10.0.0.0/16 netmask 255.255.0.0
-#
-# ip route add default via 10.0.0.1 dev eno8403
 
 mkdir /opt
 chown root:systems /opt/spack
 mkdir /projects
 chown root:systems /projects
 
-# Mounting filesystems 
-#
-# add to /etc/fstab
-#
-# nfs mounts provided in warewulf.conf
-# 10.0.0.1:/home /home nfs defaults 0 0
-# 10.0.0.1:/projects /projects nfs defaults 0 0
-# 10.0.0.1:/opt /opt nfs defaults 0 0
-#
-# Otherwise 
-#
-# mount -t 10.0.0.1:/opt /opt nfs defaults 0 0
-#
+# Mounting filesystems
+# Add to /etc/fstab
 mount -a
-#
 
-# change permissions
+# Change permissions
 chmod u+x /usr
 chmod g+x /usr
 chmod o+x /usr
@@ -49,20 +49,17 @@ chmod u+x /etc/slurm
 chmod g+x /etc/slurm
 chmod o+x /etc/slurm
 
-## @RYAN 
-# Installed a new docker on comp nodes
-# Might need to manually start on boot
-
-# turn things back on 
+# Restart services
 systemctl restart dbus
 systemctl restart wwclient
 systemctl restart munge
 systemctl restart slurmd
 mount -a
+
 set +x
 
 echo "!!!"
-echo "If you still cant ping things, you probably need to run this on the head node:"
+echo "If you still can't ping things, you probably need to run this on the head node:"
 echo "iptables -t nat -A POSTROUTING -o eno8303 -j MASQUERADE"
 echo "!!!"
 
