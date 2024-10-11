@@ -12,19 +12,14 @@ echo -=-=-=-=-=-=-=-=-
 
 set -x
 
-# Read input
-read -p "Enter 2 or 3 to set IP address: " INPUT
-
-# Check input and set the IP accordingly
-if [[ "$INPUT" == "2" ]]; then
+if [[ "$1" == "2" ]]; then
     ifconfig eno8403 10.0.0.2/16 netmask 255.255.0.0
     ip route add default via 10.0.0.1 dev eno8403
-elif [[ "$INPUT" == "3" ]]; then
+elif [[ "$1" == "3" ]]; then
     ifconfig eno8403 10.0.0.3/16 netmask 255.255.0.0
     ip route add default via 10.0.0.1 dev eno8403
 else
     echo "No network setup.."
-    exit 1
 fi
 
 # Update networking on computes
