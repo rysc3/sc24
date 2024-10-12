@@ -9,12 +9,15 @@
 # cm show cache --tags=results,dir,local -j
 CACHE="$(cm show cache --tags=results,dir,local -j | tail -n 1 | awk '{print $2}')"
 
-
-
 if [ "$1" == "yes" ]; then
   echo "Deleting cache: $CACHE"
   rm -rf $CACHE
-else 
+else
+  echo ""
+  echo ""
+  echo "your cache is: $CACHE"
+  echo ""
+  echo ""
   echo "if you haven't pushed, things will go bad."
   echo "run ~/generate-results-tree.sh"
   echo "then run ~/submit-results.sh"
