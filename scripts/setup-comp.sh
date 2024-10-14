@@ -45,7 +45,9 @@ chmod g+x /etc/slurm
 chmod o+x /etc/slurm
 
 # Restart services
+systemctl restart dbus-broker
 systemctl restart dbus
+systemctl restart rtkit-daemon
 systemctl restart wwclient
 systemctl restart munge
 systemctl restart slurmd
