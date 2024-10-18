@@ -60,4 +60,10 @@ echo "If you still can't ping things, you probably need to run this on the head 
 echo "iptables -t nat -A POSTROUTING -o eno8303 -j MASQUERADE"
 echo "!!!"
 
+echo "Now we need to reinstall the nvidia drivers"
+set -x
+dnf module remove -y nvidia-driver:latest-dkms
+dnf module install -y nvidia-driver:latest-dkms
+set +x
+
 echo "Done :)"
