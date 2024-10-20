@@ -66,4 +66,6 @@ dnf module remove -y nvidia-driver:latest-dkms
 dnf module install -y nvidia-driver:latest-dkms
 set +x
 
+nvidia-smi --query-gpu=name,utilization.gpu --format=csv
+
 echo "Done :)"
