@@ -30,7 +30,7 @@ After you push to your new branch, go to the git repo and click create pull requ
 - Systems
 - Reproducibility
 - Contact: `xavierbarr`
-- Emergency Contact:
+- Emergency Contact: Matthew Fricke: `matthewfricke`
 
 ### Saskia 
 - ICON
