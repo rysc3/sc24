@@ -16,3 +16,38 @@ git push
 ```
 
 After you push to your new branch, go to the git repo and click create pull request. 
+
+## Team & Responsibiilities 
+
+### Ryan 
+- Benchmarks
+- Systems
+- Contact: `ryan.was.taken`
+- Emergency Contact: Nick Bacon: `inept.io`
+
+### Xavier
+- Benchmarks
+- Systems
+- Reproducibility
+- Contact: `xavierbarr`
+- Emergency Contact:
+
+### Saskia 
+- ICON
+- Contact: `mirinovia`
+- Emergency Contact:
+
+### Sumaya 
+- NAMD
+- Contact: `sumayahm23`
+- Emergency Contact:
+
+### Molly 
+- ICON
+- Contact: `mollypalk5`
+- Emergency Contact:
+
+### Reece
+- NAMD
+- Contact: `lofa_bread`
+- Emergency Contact:
