@@ -52,9 +52,9 @@ After you push to your new branch, go to the git repo and click create pull requ
 ### Molly 
 - ICON
 - Contact: `mollypalk5`
-- Emergency Contact:
+- Emergency Contact: 
 
 ### Reece
 - NAMD
 - Contact: `lofa_bread`
-- Emergency Contact:
+- Emergency Contact: Adriana Ransby (770) 231-6742
