@@ -30,19 +30,19 @@ After you push to your new branch, go to the git repo and click create pull requ
 - Benchmarks
 - Systems
 - Contact: `ryan.was.taken`
-- Emergency Contact: Nick Bacon: `inept.io`
+- Emergency Contact: Nick Bacon: (505) 514-3855
 
 ### Xavier
 - Benchmarks
 - Systems
 - Reproducibility
 - Contact: `xavierbarr`
-- Emergency Contact: Matthew Fricke: `matthewfricke`
+- Emergency Contact: Matthew Fricke: (505) 453-0688
 
 ### Saskia 
 - ICON
 - Contact: `mirinovia`
-- Emergency Contact:
+- Emergency Contact: Jane Cudney-Black (505) 980-6575
 
 ### Sumaya 
 - NAMD
