@@ -47,12 +47,12 @@ After you push to your new branch, go to the git repo and click create pull requ
 ### Sumaya 
 - NAMD
 - Contact: `sumayahm23`
-- Emergency Contact: Abdalla Mohamed (505-659-1313)
+- Emergency Contact: Abdalla Mohamed (505) 659-1313
 
 ### Molly 
 - ICON
 - Contact: `mollypalk5`
-- Emergency Contact: 
+- Emergency Contact: Linda Palko (505) 261-0747
 
 ### Reece
 - NAMD
