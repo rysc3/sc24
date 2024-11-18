@@ -23,31 +23,31 @@
   - First, you will need to edit the names of the grid files. You can either rename in the script to match the directory or vice versa. For each grid file, you will need to change the section where it specifies `atmo_dyn_grids` to change the grid.
   - Next, change `vertical/coord_tables` to `vertical_coord_tables`. Give the absolute path of the vct_filename so it can find it i.e. `/path/to/icon/vertical_coord_tables/atm_hyb_sz_30`.  
   - You will also need to turn off some things from the output_nml. Should be:
-`1 !&output_nml  
-2 ! output_filename = 'icon-mpi-dwd.52.medium.L30.tri.nonhydro' ! file name base  
-3 ! output_bounds = 0.,${dt_restart},${dt_data} ! start, end, increment  
-4 ! steps_per_file = ${steps_per_file}  
-5 ! remap = 0 ! 0 = no remapping  
-6 ! output_grid = .TRUE.  
-7 ! ml_varlist =  
+1 !&output_nml  <br/><br/>
+2 ! output_filename = 'icon-mpi-dwd.52.medium.L30.tri.nonhydro' ! file name base  <br/><br/>
+3 ! output_bounds = 0.,${dt_restart},${dt_data} ! start, end, increment  <br/><br/>
+4 ! steps_per_file = ${steps_per_file}  <br/><br/>
+5 ! remap = 0 ! 0 = no remapping  <br/><br/>
+6 ! output_grid = .TRUE.  <br/><br/>
+7 ! ml_varlist =  <br/><br/>
 ,→  'qv','u','v','w','temp','pres_sfc','pres','theta_v','rho','exner','tempv','omega_z','div','z_mc','SHFL_S','LHFL_S','qhfl_s','tot_prec','group:precip_vars','cosmu0','SOB_S','group:rad_vars'  
-8 ! pl_varlist = 'u','v','w','temp'  
-9 ! p_levels = 20000.,50000.,85000. ! (Pa) from TOA to surface  
-10 ! hl_varlist = 'u','v'  
-11 ! h_levels = 10000.,1000.,100. ! (m) from TOA to surface  
-12 !/  
-13 &output_nml  
-14 output_filename = 'icon-mpi-dwd.52.medium.L30.latlon.nonhydro' ! file name base  
-15 output_bounds = 0.,${dt_restart},${dt_data} ! start, end, increment  
-16 steps_per_file = ${steps_per_file}  
-17 remap = 1 ! 1 = remap to regular lat-lon grid  
-18 reg_lat_def = -90.,1., 90. ! latitude grid  
-19 reg_lon_def = 0.,1.,360. ! longitude grid  
-20 output_grid = .TRUE.  
-21 ! ml_varlist =  
-,→ 'qv','u','v','w','temp','pres_sfc','pres','z_mc','SHFL_S','LHFL_S','qhfl_s','tot_prec','group:precip_vars','cosmu0','SOB_S','group:rad_vars'  
+8 ! pl_varlist = 'u','v','w','temp'  <br/><br/>
+9 ! p_levels = 20000.,50000.,85000. ! (Pa) from TOA to surface  <br/><br/>
+10 ! hl_varlist = 'u','v'  <br/><br/>
+11 ! h_levels = 10000.,1000.,100. ! (m) from TOA to surface  <br/><br/>
+12 !/  <br/><br/>
+13 &output_nml  <br/><br/>
+14 output_filename = 'icon-mpi-dwd.52.medium.L30.latlon.nonhydro' ! file name base  <br/><br/>
+15 output_bounds = 0.,${dt_restart},${dt_data} ! start, end, increment  <br/><br/>
+16 steps_per_file = ${steps_per_file}  <br/><br/>
+17 remap = 1 ! 1 = remap to regular lat-lon grid <br/><br/> 
+18 reg_lat_def = -90.,1., 90. ! latitude grid  <br/><br/>
+19 reg_lon_def = 0.,1.,360. ! longitude grid  <br/><br/>
+20 output_grid = .TRUE.  <br/><br/>
+21 ! ml_varlist =  <br/><br/>
+,→ 'qv','u','v','w','temp','pres_sfc','pres','z_mc','SHFL_S','LHFL_S','qhfl_s','tot_prec','group:precip_vars','cosmu0','SOB_S','group:rad_vars'  <br/><br/>
 22 pl_varlist = 'u','v','w','temp'  
-23 ! hl_varlist = 'u','v'`  
+23 ! hl_varlist = 'u','v'  <br/><br/>
 (for the varlists, you can turn of ml_varlist and hl_varlist)
 9. Run the experiment (`./exp.nh_dcmip_tc_52_r2b4.run`). Simulation should start running!
 10. If you want to run multinode: create a hostfile and change the mpiexec command.
