@@ -1,4 +1,4 @@
-## Directions for installing ICON
+## Directions for Installing ICON
 1. git clone https://gitlab.dkrz.de/icon/icon-model.git
 2. Edit /config/dkrz/levante.gcc
   - from here, you will need to install the spack dependencies
