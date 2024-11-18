@@ -11,3 +11,7 @@ https://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-html/node26.html
 
 A research paper about namd:
 https://www.ks.uiuc.edu/Research/namd/cvs/ug.pdf
+
+NAMD tutorial
+https://www.ks.uiuc.edu/Research/namd/
+
