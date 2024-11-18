@@ -59,3 +59,92 @@
     - You will also need to change `$num_of_total_procs` (line 31) to equal the amount of mpi processes you specified in the `hostfile.txt` (you will need to give the absolute path so it can find it). In our example, we specified a total of 200 proccesses.
 11. Run the experiment (`./exp.nh_dcmip_tc_52_r2b4.run`). Simulation should start running **MULTINODE**!
 12. Profit! Also, "Allowed changes e.g.: nproma, proc0_shift, START" (from Jannek). Try these for optimization. 
+
+## Optimizing
+Key Variables
+Cores per Socket (𝐶socket): Number of physical cores per CPU socket.
+Threads per Core (𝑇core): Number of hardware threads per physical core (usually 1 or 2).
+Sockets per Node (𝑆node): Number of physical CPU sockets in a node.
+Total Cores per Node (𝐶node): =𝐶socket×𝑆node​
+ 
+Total Hardware Threads per Node (𝑇node): 𝑇node=𝐶node×𝑇core
+ 
+MPI Ranks per Node (
+𝑅
+node
+R 
+node
+​
+ ): Number of MPI ranks you plan to use per node.
+2. Setting OpenMP and ICON Threads
+Formula for OMP_NUM_THREADS
+OMP_NUM_THREADS
+=
+𝑇
+node
+𝑅
+node
+OMP_NUM_THREADS= 
+R 
+node
+​
+ 
+T 
+node
+​
+ 
+​
+ 
+This ensures that each MPI rank gets an equal share of threads.
+Example:
+If 
+𝑇
+node
+=
+64
+T 
+node
+​
+ =64 and 
+𝑅
+node
+=
+4
+R 
+node
+​
+ =4, then:
+OMP_NUM_THREADS
+=
+64
+4
+=
+16
+OMP_NUM_THREADS= 
+4
+64
+​
+ =16
+Formula for ICON_THREADS
+ICON_THREADS
+=
+OMP_NUM_THREADS
+ICON_THREADS=OMP_NUM_THREADS
+ICON typically expects ICON_THREADS to match OMP_NUM_THREADS.
+Balancing MPI and OpenMP
+More MPI ranks (
+𝑅
+node
+↑
+R 
+node
+​
+ ↑) reduces OMP_NUM_THREADS, increasing inter-process communication but better load balance for memory-bound tasks.
+Fewer MPI ranks (
+𝑅
+node
+↓
+R 
+node
+​
+ ↓) increases OMP_NUM_THREADS, favoring computation-heavy tasks but with fewer MPI processes.
