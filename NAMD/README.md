@@ -13,5 +13,6 @@ A research paper about namd:
 https://www.ks.uiuc.edu/Research/namd/cvs/ug.pdf
 
 NAMD tutorial
-https://www.ks.uiuc.edu/Research/namd/
+http://www.ks.uiuc.edu/Training/Tutorials/namd/namd-tutorial-unix.pdf
+
 
