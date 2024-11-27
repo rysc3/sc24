@@ -1,3 +1,7 @@
+# Blame @Ryan Scherbarth
+# https://ryanscherbarth.com
+# https://github.com/rysc3/sc24
+
 #!/bin/bash 
 #SBATCH --job-name "HPCG"
 #SBATCH --time 04:01:00
