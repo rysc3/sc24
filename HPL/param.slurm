@@ -1,11 +1,15 @@
 #!/bin/bash 
-#SBATCH --job-name "HPL Ns"
+
+# Blame @Ryan Scherbarth
+# https://ryanscherbarth.com
+# https://github.com/rysc3/sc24
+
+#SBATCH --job-name "HPL"
 #SBATCH --time 04:01:00
-#SBATCH -N 60
+#SBATCH -N 64
 #SBATCH --ntasks-per-node 4 	# HPL requires 1 MPI rank for each gpu 
 #SBATCH --array 1-50
-#SBATCH --partition admin
-#SBATCH --account 
+
 
 # export NVSHMEM_BOOTSTRAP_PMI=PMIX
 # export HPL_USE_NVSHMEM=0
