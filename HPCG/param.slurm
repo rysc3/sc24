@@ -1,24 +1,40 @@
+#!/bin/bash 
+
 # Blame @Ryan Scherbarth
 # https://ryanscherbarth.com
 # https://github.com/rysc3/sc24
 
-#!/bin/bash 
 #SBATCH --job-name "HPCG"
-#SBATCH --time 04:01:00
-#SBATCH -N 2
-#SBATCH --ntasks-per-node 4 	# HPL requires 1 MPI rank for each gpu 
-#SBATCH --array 1-2
-#SBATCH -w hops1,hops2
-#SBATCH --partition admin
-#SBATCH --account 
+#SBATCH --time 00:10:00
+#SBATCH -N 1
+#SBATCH --ntasks-per-node 1 	# HPL requires 1 MPI rank for each gpu 
+#SBATCH --array 1-1
+#SBATCH --partition condo
+
+# We want to specifically request gpus named "a100". If you look in the /etc/slurm/slurn.conf
+# There are a number of nodes within the condo partition that have Multi Instance GPUS (MIG)
+# Without specifying we want full a100s, and just using the --gpus=1 flag, you may get a full 
+# a100 on one run, followed by a MIG node the next run where you get 1/7th of an a100.
+
+#SBATCH --gres gpu:a100:1
+
 
 #
 # Start Static Variables
 #
 START_TIME=`date "+%Y-%m-%dT::%H:%M:%S"`
-# CONT='/ascldap/users/rdscher/nvidia/hpc-benchmarks:24.06.sif'
+
+# TODO @here
+# give the full filepath to your .sif file
 CONT='/ascldap/users/rdscher/nvidia/hpc-benchmarks:24.03.sif'
+
+# TODO @here 
+# adjust the portion of the string below BEFORE the colon to be the full filepath to the 
+# directory in which you are running. cd into the directory where you have this param.slurm 
+# file and type `pwd`. Put the output before the colon here.
 MOUNT="/ascldap/users/rdscher/HPCG:/workspace/dat-files"
+
+# You should not need to touch any of these
 RESULTS_FULL="$SLURM_SUBMIT_DIR/RESULTS_FULL.csv"
 RESULTS_SML="$SLURM_SUBMIT_DIR/RESULTS_SML.csv"
 PARAMS_FILE="$SLURM_SUBMIT_DIR/PARAM_PARAMS.csv"

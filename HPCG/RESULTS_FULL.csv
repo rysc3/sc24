@@ -2,8 +2,8 @@
 --nodes: 64
 --ntasks-per-node: 4(x64)
 Nodelist:
-Params: NB, P, Q, N
-1152, 16, 16, 1583000
+Params: NX, NY, NZ, RT
+160, 160, 160, 1810
 -- Results --
 GFlops: 9.977e+06
 Start time: 2024-09-19T::07:00:35
